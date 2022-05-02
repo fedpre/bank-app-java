@@ -85,6 +85,7 @@ public class AccountController {
         this.account.deposit(deposit);
         currentBalance.setText("Current balance: $" + this.account.getBalance());
         depositInput.setText("");
+        setTransactionHistory(this.account);
     }
     @FXML
     private void withdrawAction(ActionEvent event) {
@@ -92,6 +93,7 @@ public class AccountController {
         this.account.withdraw(withdraw);
         currentBalance.setText("Current balance: $" + this.account.getBalance());
         withdrawInput.setText("");
+        setTransactionHistory(this.account);
     }
     @FXML
     private void backAction(ActionEvent event) throws IOException {
@@ -106,6 +108,7 @@ public class AccountController {
 
     protected void setTransactionHistory(BankAccount account) {
         ArrayList<String[]> transCSV = account.getCurrentTransactions();
+        this.transactions.clear();
 
         for (String[] t : transCSV) {
             Transaction newTransaction = new Transaction();
