@@ -1,0 +1,5 @@
+accountName,balance,dateCreated
+luca,0.0,2022-04-30 15:33:45.945115
+transaction,amount,newBalance,dateCreated
+deposit,1000.0,1000.0,2022-04-30 15:33:51.956249
+withdraw,300.0,700.0,2022-04-30 15:33:54.842872

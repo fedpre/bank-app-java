@@ -1,0 +1,7 @@
+accountName,balance,dateCreated
+samuel,0.0,2022-04-29 12:35:31.918893
+transaction,amount,newBalance,dateCreated
+deposit,500.0,500.0,2022-04-30 15:20:42.329190
+withdraw,200.0,300.0,2022-04-30 15:20:45.135981
+withdraw,200.0,100.0,2022-04-30 15:20:48.687303
+deposit,500.0,600.0,2022-04-30 15:20:56.788939
