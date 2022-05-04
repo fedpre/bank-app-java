@@ -72,16 +72,23 @@ public class BankAccount extends FileHandler implements Bank{
     }
     // Method to withdraw money
     public boolean withdraw(double amount) {
+        // Check if the request of withdraw money would make the balance negative
         if (this.balance - amount < 0) {
+            // In this case, do not allow the user to withdraw money
             System.out.println("Not enough money in the bank account.");
             return false;
         }
+        // If the amount is allowed, diminish the balance of the requested amount
         this.balance -= amount;
+        // Create the transaction string to add to the CSV
         String[] transaction = { "withdraw", String.valueOf(amount), String.valueOf(this.balance), createCurrentDate() };
+        // Add the transaction to the CSV file
         addRow(transaction);
+        // Add the transaction to the ArrayList<>
         transactions.add(transaction);
         return true;
     }
+    // Method to create the string representation of the BankAccount object
     public String toString() {
         return "Account owner: " + this.name + " - Balance: $" + this.balance;
     }

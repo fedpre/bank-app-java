@@ -27,7 +27,7 @@ The UI has been created with JavaFX. I have implemented several FXML files to la
 
 Below is provided a Demo Video for the functionalities of the app and a walkthrough of the code:
 
-[Bank App Demo Video](http://youtube.link.goes.here)
+[Bank App Demo Video](https://youtu.be/gZ8hJccjvcg)
 
 # Development Environment
 * IntelliJ IDEA (Community Edition)

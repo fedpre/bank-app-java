@@ -18,6 +18,7 @@ abstract class FileHandler {
 
     // Method to create a new CSV file to record all the information of an account owner
     protected void createCSV(String title, double balance) {
+        // Create the path on the CSV file
         CSV_PATH_FILE = "accounts/" + title + ".csv";
         this.myFile = new File(CSV_PATH_FILE);
 
@@ -53,15 +54,20 @@ abstract class FileHandler {
     }
     // Method to load a CSV file from a previously created account
     protected List<String[]> loadCSV(String title, int skipLines) {
+        // Create the path on the CSV file
         CSV_PATH_FILE = "accounts/" + title + ".csv";
         this.myFile = new File(CSV_PATH_FILE);
+
         try {
+            // Create the FileReader object
             FileReader reader = new FileReader(CSV_PATH_FILE);
+            // Create the CSVReader object with the previous loaded file
             CSVReader csvReader = new CSVReaderBuilder(reader)
                     .withSkipLines(skipLines)
                     .build();
-
+            // Read all the rows in the CSV file into a List<String[]>
             List<String[]> data = csvReader.readAll();
+            // Close the connection to the reader object
             csvReader.close();
             return data;
 
@@ -72,14 +78,16 @@ abstract class FileHandler {
     // Append a row of information (a transaction) to a CSV file
     protected void addRow(String[] data) {
         try {
+            // Create the fFileWriter with the path of the CSV file
             FileWriter output = new FileWriter(this.myFile, true);
+            // Create the CSVWriter object from the file
             CSVWriter writer = new CSVWriter(output, ',',
                     CSVWriter.NO_QUOTE_CHARACTER,
                     CSVWriter.DEFAULT_ESCAPE_CHARACTER,
                     CSVWriter.DEFAULT_LINE_END);
-
+            // Add the data row to the CSV file
             writer.writeNext(data);
-
+            // Close the connection to the CSVWriter object
             writer.close();
         } catch (IOException e) {
             throw new RuntimeException(e);

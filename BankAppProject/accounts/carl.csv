@@ -1,0 +1,4 @@
+accountName,balance,dateCreated
+carl,0.0,2022-05-04 11:06:56.004212
+transaction,amount,newBalance,dateCreated
+deposit,1000.0,1000.0,2022-05-04 11:07:17.536917
